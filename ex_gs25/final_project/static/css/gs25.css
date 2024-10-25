@@ -81,17 +81,6 @@ ul, ol, li {
     margin-top: 16px;
 }
 
-.lctwrap .lct > li > a {
-    display: block;
-    position: relative;
-    vertical-align: middle;
-    font-size: 15px;
-    color: #666;
-    margin-top: 16px;
-    padding: 0px 8px 0px 12px;
-    z-index: 100;
-}
-
 a {
     color: #333;
     text-decoration: none;
