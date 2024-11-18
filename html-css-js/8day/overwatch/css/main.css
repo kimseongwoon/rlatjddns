@@ -1,7 +1,6 @@
 body {
   height: 100vh;
-  background-image url("background-image: url(
-    "https://raw.githubusercontent.com/ParkYoungWoong/overwatch-hero-selector-vanilla/master/images/bg.jpg");
+  background-image: url("../images/bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
