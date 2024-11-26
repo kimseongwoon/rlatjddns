@@ -1,7 +1,7 @@
-package ch05.sec08;
+package ch05.sec05;
 
 public class ReplaceExample {
-
+	
 	public static void main(String[] args) {
 		String str1 = "자바 프로그래밍";
 		String str2 = str1.replace("자바", "Java");
