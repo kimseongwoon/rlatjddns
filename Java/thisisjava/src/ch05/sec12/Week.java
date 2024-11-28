@@ -1,7 +1,6 @@
 package ch05.sec12;
 
-public class Week {
-	
+public enum Week {
 	MONDAY,
 	TUESDAY,
 	WEDNESDAY,

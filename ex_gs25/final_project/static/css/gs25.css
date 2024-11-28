@@ -5,25 +5,11 @@ element.style {
     border-bottom: 1px solid #dfdfdf;
 }
 
-body {
-    position: relative;
-    font-size: 13px;
-    color: #333;
-    font-family: 'NanumBarunGothic', NanumBarunGothic, '돋움', Dotum, Arial, sans-serif;
-}
-
 /*content*/
 .cntwrap {
     width: 100%;
     margin: auto;
     border-top: 1px solid #dfdfdf;
-}
-
-html {
-    -webkit-text-size-adjust: none;
-    -ms-text-size-adjust: none;
-    -moz-text-size-adjust: none;
-    -o-text-size-adjust: none;
 }
 
 .cnt_top {
@@ -61,15 +47,6 @@ html {
     background-position: 0 -51px;
     height: 48px;
     padding-left: 20px;
-}
-
-html, body, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, address, big, cite, code, del, dfn, em, font, img, ins, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, ul, ol, li, dl, dt, dd, table, caption, tbody, tfoot, thead, tr, th, td, fieldset, form, label, legend, input, button, textarea, select {
-    margin: 0;
-    padding: 0;
-}
-
-ul, ol, li {
-    list-style: none;
 }
 
 .lctwrap .lct > li > a.home {
@@ -861,11 +838,6 @@ element.style {
     width: 100%;
 }
 
-.topwrap {
-    width: 100%;
-    background: url(https://hpimg.gsretail.com/_ui/desktop/common/images/gscvs/common/top_bg.gif) repeat-x left 40px;
-}
-
 .brdwrap .brd {
     float: left;
     background: url(https://hpimg.gsretail.com/_ui/desktop/common/images/gscvs/common/menu_brd.gif) no-repeat;
@@ -1170,25 +1142,9 @@ element.style {
     padding-left: 18px;
 }
 
-.brdwrap .uty li {
-    position: relative;
-    float: left;
-    margin: 5px 3px;
-    background: url(https://hpimg.gsretail.com/_ui/desktop/common/images/gscvs/common/icon_gswsn.png) no-repeat;
-    background-position: 0 -289px;
-    padding-left: 6px;
-}
-
 .brdwrap .uty li:first-child {
     padding-left: 0px;
     background: none;
-}
-
-.brdwrap .uty li a {
-    display: inline-block;
-    font-size: 11px;
-    color: #444;
-    padding: 2px 0px 4px;
 }
 
 .cpmenu > ul {
@@ -1199,10 +1155,6 @@ element.style {
     position: relative;
     margin: 0 auto;
     width: 100%;
-}
-
-.brdwrap .uty ul {
-    float: left;
 }
 
 .brdwrap .uty li a.lang {
@@ -1251,14 +1203,6 @@ element.style {
     position: absolute;
     top: 12px;
     left: 78px;
-}
-
-.brdwrap .uty {
-    position: relative;
-    float: right;
-    width: 370px;
-    top: 8px;
-    font-family: 'NanumBarunGothic', NanumBarunGothic;
 }
 
 .brdwrap .right_brd {

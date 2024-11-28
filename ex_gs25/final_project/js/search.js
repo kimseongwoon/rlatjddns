@@ -807,6 +807,34 @@ $(document).ready(function(){
       //]]>
       </script>
 
+<script type="text/javascript">
+//<![CDATA[
+
+
+$(document).ready(function(){
+   var gscvsGNB = new GNBController;
+   gscvsGNB.init( ".gnbw .gnb", ".gnb ul li h2 a", ".gnb ul.mlb_action", ".gnb_bg");
+});
+
+//]]>
+</script>
 
    <script type="text/javascript">
    var _TRK_LID="22400";var _L_TD="ssl.logger.co.kr";var _TRK_CDMN="";</script>
+
+<script type="text/javascript">var _CDN_DOMAIN = location.protocol == "https:" ? "https://fs.bizspring.net" : "http://fs.bizspring.net";
+		(function(b,s){var f=b.getElementsByTagName(s)[0],j=b.createElement(s);j.async=true;j.src='//fs.bizspring.net/fs4/bstrk.1m.js';f.parentNode.insertBefore(j,f);})(document,'script');</script>
+
+<script type="text/javascript">
+//<![CDATA[
+
+$(document).ready(function(){
+   var otherFamilySite = new footerFamilySiteManager();
+   otherFamilySite.setResource( ".ret_link .family", ".ULWrap1st" );
+   otherFamilySite.setResource( ".ret_link .brand", ".ULWrap2nd" );
+   otherFamilySite.init();
+});
+
+//]]>
+</script>
+

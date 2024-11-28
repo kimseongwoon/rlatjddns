@@ -1,7 +1,6 @@
 package ch05.sec12;
 
-public class LoginResult {
-	
+public enum LoginResult {
 	LOGIN_SUCCESS,
 	LOGIN_FAILED,
 

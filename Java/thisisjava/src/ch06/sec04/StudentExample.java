@@ -1,5 +1,7 @@
 package ch06.sec04;
 
+import ch06.sec03.SportsCar;
+
 public class StudentExample {
 	
 	public static void main(String[] args) {
