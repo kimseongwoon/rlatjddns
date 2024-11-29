@@ -1,4 +1,4 @@
-package ch06.exercise.problem20;
+package ch06.problem20;
 
 public class Account {
 	private String ano;  // 계좌번호

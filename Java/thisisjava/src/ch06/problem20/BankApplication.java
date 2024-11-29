@@ -1,4 +1,4 @@
-package ch06.exercise.problem20;
+package ch06.problem20;
 
 import java.util.Scanner;
 
