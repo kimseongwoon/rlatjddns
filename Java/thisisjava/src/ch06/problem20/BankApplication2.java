@@ -2,80 +2,23 @@ package ch06.problem20;
 
 import java.util.Scanner;
 
-public class BankApplication {
+public class BankApplication2 {
+	
 	static Scanner scanner = new Scanner(System.in);
 	static Account[] accountArray = new Account[100];
-
+	
 	public static void main(String[] args) {
 		boolean run = true;
 		while(run) {
-			System.out.println("--------------------------------------------------");
-			System.out.println("1. 계좌생성 | 2. 계좌목록 | 3. 예금 | 4. 출금 | 5. 종료");
-			System.out.println("--------------------------------------------------");
+			System.out.println("--------------------------------------------------------------");
+			System.out.println("1. 계좌생성 | 2. 계좌목록 | 3. 예금 | 4. 출금 | 5. 종료 | 10. 계좌삭제");
+			System.out.println("--------------------------------------------------------------");
 			System.out.print("선택> ");
 			
-			int selectNo = Integer.parseInt(scanner.nextLine());
-			BankProcessType bpt = null;
-			switch (selectNo) {
-				case 1:					// 1. 계좌생성
-					createAccount();
-					break;
-				case 2:					// 2. 계좌목록
-					
-					break;
-				case 3:					// 3. 예금
-					
-					break;
-				case 4:					// 4. 출금
-					
-					break;
-				case 5:					// 5. 종료
-					run = false;
-					break;
-				case 10:
-					bpt = BankProcessType.ACCOUNT_DELETE;
-					break;				// 10. 계좌삭제(Delete)
-            }
+			// switch문에 Enum Type으로 사용을 하여 코드 작성(189페이지 코드 참고)
 			
-			if (bpt == BankProcessType.ACCOUNT_CREATE) {
-				createAccount();    // 메소드 호출
-			} else if (bpt == BankProcessType.ACCOUNT_LIST) {
-				listAccount();		// 메소드 호출
-			} else if (bpt == BankProcessType.ACCOUNT_DEPOSIT) {
-				deposit();		// 메소드 호출
-			} else if (bpt == BankProcessType.ACCOUNT_WITHDRAW) {
-				withdraw();		// 메소드 호출
-			} else if (bpt == BankProcessType.ACCOUNT_DELETE) {
-				deleteAccount();		// 메소드 호출
-			}
 		}
 		System.out.println("프로그램 종료");
-	}
-	
-	/**
-	 * 계좌 삭제 메소드
-	 */
-	private static boolean deleteAccount() {
-		boolean isDeleteAccountSuccess = false;
-		
-		System.out.println("----------");
-		System.out.println("계좌삭제");
-		System.out.println("----------");
-		
-		System.out.print("계좌번호: ");
-		String accountNo = scanner.nextLine();
-		
-		for(int i = 0; i < accountArray.length; i++) {
-			if(accountArray[i] != null 
-				&& accountNo.equals(accountArray[i].getAno())
-			) {
-				accountArray[i] = null;  // 실제 계좌삭제
-				isDeleteAccountSuccess = true;
-				break;
-			}	
-		}
-		
-		return isDeleteAccountSuccess;
 	}
 	
 	/**
@@ -146,14 +89,14 @@ public class BankApplication {
 		System.out.print("계좌번호: ");
 		String ano = scanner.nextLine();
 		System.out.print("예금액: "); // ex) 1000
-		int money = -Integer.parseInt(scanner.nextLine());
+		int money = Integer.parseInt(scanner.nextLine());
 		
 		// 100개의 account에서 계좌번호가 일치하는 계좌만 가져오기
 		for(int i = 0; i < accountArray.length; i++) {
 			// 계좌번호가 일치하는 계좌를 찾을 경우
 			if(accountArray[i] != null 						     // 계좌번호가 있는 계좌일 경우
 				&& ano.equals(accountArray[i].getAno())			 // 입력한 계좌번호가 있는 경우
-				&& (accountArray[i].getBalance() + money) >= 0   // 출금금액을 하고 난 이후 0원 이상일 경우
+				&& (accountArray[i].getBalance() + money) >= 0   // 예금액 0원 이상일 경우
 			) {
 				accountArray[i].setBalance(money);
 				break;
@@ -186,4 +129,3 @@ public class BankApplication {
 		}
 	}
 }
-
