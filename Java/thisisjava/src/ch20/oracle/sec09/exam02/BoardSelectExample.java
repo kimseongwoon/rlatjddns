@@ -1,11 +1,14 @@
-package ch20.oracle.sec06;
+package ch20.oracle.sec09.exam02;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class BoardWithFileInsertExample {
+import ch20.oracle.sec09.exam01.User;
+
+public class BoardSelectExample {
 	public static void main(String[] args) {
 		Connection conn = null;
 		
@@ -15,29 +18,44 @@ public class BoardWithFileInsertExample {
 			// 등록된 드라이버를 실제 Connection 클래스 변수에 연결
 			conn = DriverManager.getConnection(
 					"jdbc:oracle:thin:@localhost:1521/orcl",
-					"test1",
+					"test3",
 					"1234"
 			);
 			System.out.println("연결 성공");
 			
-//			// 매개변수화된 SQL문 작성
-//			String sql = "" 
-//					+ "INSERT INTO boards(bno, btitle, bcontent, bwriter, bdate)" 
-//					+ "VALUES(SEQ_BNO.NEXTVAL, ?, ?, ?, SYSDATE)";
-//			//PreparedStatement 얻기 및 값 지정
-//			PreparedStatement pstmt = conn.prepareStatement(sql, new String[] {"bno"});
-//			pstmt.setString(1, "눈 오는 날");
-//			pstmt.setString(2, "함박눈이 내려요");
-//			pstmt.setString(3, "winter");
-			String sql = "" 
-					+ "INSERT INTO boards(bno, btitle, bcontent, bwriter, bdate)" 
-					+ "VALUES(SEQ_BNO.NEXTVAL, '눈 오는 날', '함박눈이 내려요', 'winter', SYSDATE)";
+			String sql = """
+					SELECT 
+						bno,
+						btitle,
+						bcontent,
+						bwriter,
+						bdate,
+						bfilename,
+						bfiledata
+					FROM
+						boards
+					WHERE
+						bwriter = ?
+					""";
 			//PreparedStatement 얻기 및 값 지정
-			PreparedStatement pstmt = conn.prepareStatement(sql, new String[] {"bno"});
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, "winter");
 			
-			// SQL문을 진짜 실행
-			int rows = pstmt.executeUpdate(); // 리턴값은 실제 insert한 행의 개수
-			System.out.println("저장된 행 수: " + rows);
+			//SQL문 실행 후 ResultSet을 통해 데이터 읽기
+			ResultSet rs = pstmt.executeQuery(); // SELECT문 실행
+			while(rs.next()) { // rs의 0번째 커서에 데이터가 있으면 true
+				//데이터 행을 읽고 Board 객체 생성
+				Board board = new Board();
+				board.setBno(rs.getInt("bno"));
+				board.setBtitle(rs.getString("btitle"));
+				board.setBcontent(rs.getString("bcontent"));
+				board.setBwriter(rs.getString("bwriter"));
+				board.setBdate(rs.getDate("bdate"));
+				
+				//콘솔에 출력
+				System.out.println(board);
+			}
+			rs.close();
 			
 			// PreparedStatement 닫기
 			pstmt.close();
