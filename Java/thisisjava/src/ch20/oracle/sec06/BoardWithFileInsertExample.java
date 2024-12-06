@@ -20,14 +20,14 @@ public class BoardWithFileInsertExample {
 			);
 			System.out.println("연결 성공");
 			
-			// 매개변수화된 SQL문 작성
-			String sql = "" 
-					+ "INSERT INTO boards(bno, btitle, bcontent, bwriter, bdate)" 
-					+ "VALUES(SEQ_BNO.NEXTVAL, ?, ?, ?, SYSDATE)";
-			//PreparedStatement 얻기 및 값 지정
-			PreparedStatement pstmt = conn.prepareStatement(sql, new String[] {"bno"});
-			pstmt.setString(1, "눈 오는 날");
-			pstmt.setString(2, "함박눈이 내려요");
+//			// 매개변수화된 SQL문 작성
+//			String sql = "" 
+//					+ "INSERT INTO boards(bno, btitle, bcontent, bwriter, bdate)" 
+//					+ "VALUES(SEQ_BNO.NEXTVAL, ?, ?, ?, SYSDATE)";
+//			//PreparedStatement 얻기 및 값 지정
+//			PreparedStatement pstmt = conn.prepareStatement(sql, new String[] {"bno"});
+//			pstmt.setString(1, "눈 오는 날");
+//			pstmt.setString(2, "함박눈이 내려요");
 			pstmt.setString(3, "winter");
 			
 			// SQL문을 진짜 실행
