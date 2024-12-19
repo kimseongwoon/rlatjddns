@@ -30,14 +30,14 @@
 </head>
 <body>
   <!-- 태그(tag)안에서 자바스크립트 사용하여 이벤트 처리하기 -->
-   <ul>
+    <ul>
       <li><a href="#" onclick="changeBg('green');">Green</a></li>
       <li><a href="#" ondblclick="changeBg('orange');">Orange</a></li>
       <li><a href="#" onclick="changeBg('purple');">Purple</a></li>
-   </ul>
-   <div id="result"></div>
-   
-   <script>
+    </ul>
+    <div id="result"></div>
+    
+    <script>
     function changeBg(color) {
       // id가 result인 태그객체를 가져온다
       let result = document.querySelector('#result');
